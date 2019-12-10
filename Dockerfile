@@ -1,4 +1,4 @@
-FROM jc5x/firefly-iii-base-image:latest
+FROM ikaruswill/firefly-iii-base-fpm-alpine:latest
 
 # See also: https://github.com/JC5/firefly-iii-base-image
 
