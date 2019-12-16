@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 echo "Now in entrypoint.sh for Firefly III"
 
@@ -52,7 +52,7 @@ fi
 if [[ ! -z "$DB_PORT" ]]; then
   $FIREFLY_PATH/.deploy/docker/wait-for-it.sh "${DB_HOST}:${DB_PORT}" -- echo "db is up. Time to execute artisan commands"
 fi
-#env $(grep -v "^\#" .env | xargs) 
+#env $(grep -v "^\#" .env | xargs)
 php artisan cache:clear
 php artisan firefly-iii:create-database
 php artisan migrate --seed
